@@ -23,4 +23,11 @@ public class CD extends Item {
 		return numberOfTracks;
 	}
 	
+	//Formats output 
+		public String toString() {
+			String a = String.format("CD: %s \n", super.toString());
+			a += String.format("     %s\n", artist);
+			a += String.format("     # tracks: %d", numberOfTracks);
+			return a;
+		}
 }

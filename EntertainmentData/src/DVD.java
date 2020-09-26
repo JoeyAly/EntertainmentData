@@ -15,4 +15,10 @@ public class DVD extends Item {
 		return director;
 	}
 	
+	//Formats DVD output
+		public String toString() {
+			String a = String.format("DVD: %s \n", super.toString());
+			a += String.format("     %s\n", director);
+			return a;
+		}
 }

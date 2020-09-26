@@ -39,9 +39,11 @@ public class Item {
 	}
 	
 	//Sets format for CD and DVD class
-//	public String toString() {
-//		
-//	}
-//	
+	
+	public String toString() {
+		return String.format("%s (%d mins)", title, playingTime);
+	}
+		
+	
 }
 	
