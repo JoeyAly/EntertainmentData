@@ -21,10 +21,11 @@ public class Database {
 	public void list() {
 
 		for (int i=0; i<items.size(); i++){
-			System.out.println(items.get(i).toString());
+			System.out.println(items.get(i));
 		}
 	}
-
+	
+	
 	
 	//Creates variations of CDs and DVDs
 	//Adds them as new items to the database
@@ -33,12 +34,19 @@ public class Database {
 		Database db = new Database();
 		CD c = new CD("A Swingin' Affair", "Frank Sinatra", 16, 64);
 		CD d = new CD("Big Bad World", "Plain White T's", 10, 35);
-		DVD v = new DVD("Oh Brother, Where Art Thou?", "Joel and Ethan Coen", 106);
+		Video x = new Video("Oh Brother, Where Art Thou?", "Joel and Ethan Coen", 106, Video.Format.Bluray);
+		
 		
 		db.addItem(c);
 		db.addItem(d);
-		db.addItem(v);
+		db.addItem(x);
 		
+
 		db.list();
+
+		
+		
+		
+		
 	}
 }
