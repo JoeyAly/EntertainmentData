@@ -13,7 +13,17 @@ public class Item {
 		this.gotIt = false;
 		this.comment = null;
 	}
-
+	//returns true if a title or comment contains the searched string
+	public boolean contains(String str) {
+		
+		if (title.contains(str)) {
+			return true;
+		} else if (comment != null && comment.contains(str)) { 
+			return true;
+		}
+		return false;
+	}
+	
 	//returns comment
 	public String getComment() {
 		return comment;

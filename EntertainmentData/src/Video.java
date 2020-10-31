@@ -16,7 +16,23 @@ public class Video extends Item {
 	}
 	
 	//returns true if a director contains the searched string
+	public boolean contains(String str) {
+		
+		if (director.contains(str)) {
+			return true;
+		}
+		return super.contains(str);
+	}
 	
+	//returns true if format contains the searched format
+	public boolean contains(Video.Format format) {
+	
+		if (type == format) {
+			return true;	
+		}
+		
+		return false;
+	}
 
 	
 	//Return directors name

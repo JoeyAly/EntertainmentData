@@ -13,6 +13,15 @@ public class CD extends Item {
 		this.numberOfTracks = numberOfTracks;
 	}
 	
+	//returns true if a artist contains the searched string
+	public boolean contains(String str) {
+		
+		if (artist.contains(str)) {
+			return true;
+		}
+		return super.contains(str);
+	}
+	
 	//returns artists in a CD
 	public String getArtist() {
 		return artist;
@@ -25,9 +34,8 @@ public class CD extends Item {
 	
 	//Formats output 
 		public String toString() {
-			String a = String.format("CD: %s \n", super.toString());
-			a += String.format("     %s\n", artist);
-			a += String.format("     # tracks: %d", numberOfTracks);
-			return a;
+			String str = String.format("CD: %s \n", super.toString());
+			str += String.format("     %s\n", artist);
+			return str += String.format("     # tracks: %d", numberOfTracks);
 		}
 }
