@@ -27,47 +27,34 @@ public class Database {
 	
 	//Searches to see if any CD or Video has the desired string
 	public void search(String str) {
-		String itemContent= "";
-		int count= 0;
+		ArrayList<Item> results = new ArrayList<Item>();
 		
 		for (Item item: items) {
 			
 			if (item.getClass() == CD.class) {
 				
-				
 				if (((CD)item).contains(str)) {
-					itemContent+= (((CD)item));
-					count += 1;
+					results.add( (CD)item);
 				}
 				
 			} if (item.getClass() == Video.class) {
 				
 				
 				if (((Video)item).contains(str)) {
-					itemContent += (((Video)item + "\n"));
-					count += 1;
+					results.add( (Video)item );
 				}
-				
-			
 			} 
-			
-			
 		}
-		if (count == 1){
-			System.out.println("Your search returned " + count+ " result: \n");
-		} else if (count > 1){
-			System.out.println("Your search returned " + count+ " results: \n");
+
+		System.out.printf("Your search returned %d result%s: \n\n", results.size(), results.size() == 1 ? "": "s");
+
+		for (Item result : results) {
+			System.out.println( result );
 		}
-		System.out.println(itemContent);
-		
-//		Item item = items.serach()
-//		System.out.println( item.toString() );
-		
 	}
 	//Searches to find any Videos on a specific format
 	public void search(Video.Format format) {
-		String itemContent= "";
-		int count= 0;
+		ArrayList<Item> results = new ArrayList<Item>();
 		
 		for (Item item: items) {
 		
@@ -75,18 +62,17 @@ public class Database {
 				
 				
 				if (((Video)item).contains(format)) {
-					itemContent += (((Video)item + "\n"));
-					count += 1;
+					results.add( (Video)item);
 				}
 			}
+			
 		}
 		
-		if (count == 1){
-			System.out.println("Your search returned " + count+ " result: \n");
-		} else if (count > 1){
-			System.out.println("Your search returned " + count+ " results: \n");
+		System.out.printf("Your search returned %d result%s: \n\n", results.size(), results.size() == 1 ? "": "s");
+
+		for (Item result : results) {
+			System.out.println( result );
 		}
-		System.out.println(itemContent);
 	}
 	
 	//Creates variations of CDs and DVDs
